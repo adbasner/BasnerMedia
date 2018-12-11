@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get '/posts' => 'posts#index'
-    # post '/posts' => 'posts#create'
-    get '/posts/:id' => 'posts#show'
-    # patch '/posts/:id' => 'posts#update'
-    # delete '/posts/:id' => 'posts#destroy'
-  end
 
+  # Backend routes for admin panel + admin login
   namespace :admin do
-    get '/dashboard' => 'pages#dashboard'
+
+    # Post CRUD
     get '/posts' => 'posts#index'
     get '/posts/new' => 'posts#new'
     get '/posts/:id' => 'posts#show'
@@ -17,5 +12,19 @@ Rails.application.routes.draw do
     patch '/posts/:id' => 'posts#update'
     get '/posts/:id/delete' => 'posts#delete'
     delete '/posts/:id' => 'posts#destroy'
+
+    # User/login routes
+    get '/dashboard/:id' => 'users#show'
+    get '/users/:id/edit' => 'users#edit'
+    patch '/users/:id' => 'users#update'
+    get '/login' => 'sessions#new'
+    post '/sessions' => 'sessions#create'
+    delete 'logout' => 'sessions#destroy'
+  end
+
+  # Front end routes for public api
+  namespace :api do
+    get '/posts' => 'posts#index'
+    get '/posts/:id' => 'posts#show'
   end
 end

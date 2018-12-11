@@ -1,0 +1,22 @@
+<%= render 'admin/shared/errors', obj: @user %>
+
+
+<%= form_for :session, :url => admin_sessions_path do |form| %>
+  <div>
+    <%= form.label :username %>
+  </div>
+  <div>
+    <%= form.text_field :username %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+  </div>
+  <div>
+    <%= form.password_field :password %>
+  </div>
+
+  <div>
+    <%= form.submit "Log In" %>
+  </div>
+<% end %>

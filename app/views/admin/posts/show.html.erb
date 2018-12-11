@@ -1,6 +1,6 @@
-<div>show page</div>
-
-<hr><hr>
+<h1>Show Page</h1>
+<hr>
+<hr>
 
 <div>Id: <%= @post.id%></div>
 <div>Title: <%= @post.title %></div>
@@ -10,5 +10,5 @@
 <hr>
 
 <%= link_to 'Edit', "/admin/posts/#{@post.id}/edit" %> |
-<%= link_to 'Back', admin_posts_path %>
-delete
+<%= link_to 'Back', admin_posts_path %> |
+<%= link_to 'Delete', "/admin/posts/#{@post.id}/delete" %>

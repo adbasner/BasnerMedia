@@ -1,3 +1,8 @@
+<h1>Edit Page</h1>
+<hr>
+<hr>
+
+
 <%= render 'admin/shared/errors', obj: @post %>
 
 <%= form_for @post, :url => "/admin/posts/#{@post.id}", :method => :patch do |form| %>
@@ -20,3 +25,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Go Back', admin_path(@post) %>
