@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     delete '/posts/:id' => 'posts#destroy'
 
     # User/login routes
-    get '/dashboard/:id' => 'users#show'
+    get '/dashboard/' => 'users#show'
     get '/users/:id/edit' => 'users#edit'
     patch '/users/:id' => 'users#update'
     get '/login' => 'sessions#new'

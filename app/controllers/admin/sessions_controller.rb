@@ -21,7 +21,7 @@ class Admin::SessionsController < ApplicationController
       session[:jwt] = jwt
 
       flash[:success] = "#{user.username} is logged in!"
-      redirect_to "/admin/dashboard/#{user.id}"
+      redirect_to admin_dashboard_path
     else
       flash.now[:warning] = 'Wrong user name or password'
       render 'new.html.erb'

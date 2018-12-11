@@ -1,0 +1,27 @@
+<%= render 'admin/shared/errors', obj: @user %>
+<%= form_for @user, :url => "/admin/users/#{@user.id}", :method => :patch do |form| %>
+  <div>
+    <%= form.label :username %>
+  </div>
+  <div>
+    <%= form.text_field :username %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+  </div>
+  <div>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation %>
+  </div>
+  <div>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= form.submit "Update Account" %>
+  </div>
+<% end %>
+
+<%= link_to 'Go Back', admin_dashboard_path(@post) %>

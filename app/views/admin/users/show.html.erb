@@ -1,8 +1,10 @@
 <h1>Admin Dashboard</h1>
-<p>Welcome <%= @user.username %></p>
+
 <p>Welcome <%= @jwt %></p>
-<% if admin_user %>
+<% if admin? %>
 <p> Hello mr admin</p>
+<p>Your username is <%= admin_user.username %>
+<p>With @ user <%= @user.username %></p>
+<%= link_to "Update Profile", "/admin/users/#{admin_user.id}/edit" %>
 <%= link_to "log out", admin_logout_path, method: :delete %>
 <% end %>
-

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   before_action :set_headers
+  helper_method :admin_user, :admin?
 
   def set_headers
     if session[:jwt]
@@ -35,17 +36,17 @@ class ApplicationController < ActionController::Base
         puts "*************************"
         puts decoded_token
         puts "*************************"
-        User.find_by(id: decoded_token[0]["user"])
+        User.find_by(id: decoded_token[0]['user'])
       rescue JWT::ExpiredSignature
         nil
       end
     end
   end
 
-  helper_method :admin_user
-
   def admin?
-    unless admin_user
+    if admin_user
+      true
+    else
       flash[:danger] = 'You can not do that fool'
       redirect_to admin_login_path
     end
