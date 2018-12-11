@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   namespace :api do
     get '/posts' => 'posts#index'
-    post '/posts' => 'posts#create'
+    # post '/posts' => 'posts#create'
     get '/posts/:id' => 'posts#show'
-    patch '/posts/:id' => 'posts#update'
-    delete '/posts/:id' => 'posts#destroy'
+    # patch '/posts/:id' => 'posts#update'
+    # delete '/posts/:id' => 'posts#destroy'
   end
 
   namespace :admin do
+    get '/dashboard' => 'pages#dashboard'
     get '/posts' => 'posts#index'
     get '/posts/new' => 'posts#new'
     get '/posts/:id' => 'posts#show'

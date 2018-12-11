@@ -1,0 +1,22 @@
+<%= render 'admin/shared/errors', obj: @post %>
+
+<%= form_for @post, :url => "/admin/posts/#{@post.id}", :method => :patch do |form| %>
+
+  <div>
+    <%= form.label :title %>
+  </div>
+  <div>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :content %>
+  </div>
+  <div>
+    <%= form.text_area :content %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

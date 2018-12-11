@@ -1,3 +1,14 @@
 <div>show page</div>
+
+<hr><hr>
+
+<div>Id: <%= @post.id%></div>
 <div>Title: <%= @post.title %></div>
 <div>Content: <%= @post.content %></div>
+<div>Created On <%= @post.created_at.strftime("%b %d, %Y") %></div>
+<div>Updated On <%= @post.created_at.strftime("%b %d, %Y") %></div>
+<hr>
+
+<%= link_to 'Edit', "/admin/posts/#{@post.id}/edit" %> |
+<%= link_to 'Back', admin_posts_path %>
+delete
