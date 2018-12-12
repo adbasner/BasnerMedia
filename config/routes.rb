@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-
   # Backend routes for admin panel + admin login
   namespace :admin do
-
     # Post CRUD
     get '/posts' => 'posts#index'
     get '/posts/new' => 'posts#new'

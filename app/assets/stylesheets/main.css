@@ -21,7 +21,7 @@ nav {
   text-decoration: none;
   color: #efefef;
   padding: 20px;
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 
 .nav-link:hover {
@@ -29,3 +29,30 @@ nav {
   color: #020202; 
 }
 
+form {
+  margin: 0 auto;
+  width: 50%;
+}
+input, textarea {
+  padding: 8px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #555;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 316px;
+  background-color: #3bde9a;
+  color: white;
+  outline: none;
+  border: 1px solid #2bde8a;
+  box-shadow: 0 0 10px #10bc79;
+  text-transform: uppercase;
+}
+
+input[type=submit]:focus {
+  background-color: #10bc79;
+}
