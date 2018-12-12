@@ -1,6 +1,8 @@
 <% flash.each do |name, msg| %>
-  <div> <%= name %> </div>
-  <div> <%= msg %> </div>
+  <div class="alert alert-<%= name %>">
+    <%= name.upcase %>: <%= msg %>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>     
+  </div>
 <% end %>
 
   

@@ -11,17 +11,16 @@
 
   <body>
     <nav>
-      <span class="nav-link">BASNER MEDIA</span> |
-      <%= link_to 'VIEW SITE', "/", {:class => "nav-link"} %> | 
-    <% if admin_user %>
-      <%= link_to 'DASHBOARD', admin_dashboard_path, {:class => "nav-link"} %> | 
-      <%= link_to "UPDATE PROFILE", "/admin/users/#{admin_user.id}/edit", :class => "nav-link" %> | 
-      <%= link_to 'LOG OUT', admin_logout_path, method: :delete, :class => "nav-link" %>
-    <% else %>
-      <%= link_to 'LOG IN', admin_login_path, :class => "nav-link" %>
-    <% end %>
+      <%= link_to 'BASNER MEDIA', "/", {:class => "nav-link"} %> | 
+      <% if admin_user %>
+        <%= link_to 'DASHBOARD', admin_dashboard_path, {:class => "nav-link"} %> | 
+        <%= link_to "UPDATE PROFILE", "/admin/users/#{admin_user.id}/edit", :class => "nav-link" %> | 
+        <%= link_to 'LOG OUT', admin_logout_path, method: :delete, :class => "nav-link" %>
+      <% else %>
+        <%= link_to 'LOG IN', admin_login_path, :class => "nav-link" %>
+      <% end %>
     </nav>
-    <div id="main">
+    <div id="main" class="admin-wrapper">
       <%= render 'admin/shared/flash' %>
       <%= yield %>
     </div>

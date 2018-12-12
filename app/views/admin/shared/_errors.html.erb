@@ -1,10 +1,12 @@
 <% if obj && obj.errors.any? %> 
   <div class="alert alert-danger">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     <p>You have: <%= pluralize(obj.errors.count, "error") %></p>
     <ul>
       <% obj.errors.full_messages.each do |msg|%>
         <li><%= msg %></li>
       <% end %>
     </ul>
+
   </div>
 <% end %>

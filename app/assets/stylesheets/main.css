@@ -8,12 +8,12 @@ body {
   min-width: 400px;
 }
 
-#main {
-  margin: 20px 0;
-}
-
 .home-page-wrapper {
   margin: 0 20px 0 20px;
+}
+
+.admin-wrapper {
+  padding-top: 62px;
 }
 
 nav {
@@ -120,4 +120,43 @@ input[type=submit]:focus {
 
 #footer {
   padding-top: 62px;
+}
+
+.alert {
+  padding: 20px;
+  font-size: 1.1rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.alert-success {
+  color: #222;
+  background-color: #D4EDDA;
+  border-color: #B3CBB0;
+  
+}
+
+.alert-danger {
+  color: #222;
+  background-color: #F8D7DA;
+  border-color: #D6B5B8; 
+}
+
+.alert-warning {
+  color: #222;
+  background-color: #FFF3CD;
+  border-color: #B0CAD0;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: #222;
+  font-weight: bold;
+  float: right;
+  font-size: 1.5rem;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
