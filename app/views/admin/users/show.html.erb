@@ -6,6 +6,8 @@
 <hr>
 <%= link_to 'View all posts', admin_posts_path %> | 
 <%= link_to 'New post', admin_posts_new_path %> | 
-<%= link_to 'Last post', "/admin/posts/#{@last}" %> | 
+<% if @last %> 
+  <%= link_to 'Last post', "/admin/posts/#{@last}" %> |
+<% end %> 
 # Of posts: <%= @user.posts.count %>
 <% end %>
