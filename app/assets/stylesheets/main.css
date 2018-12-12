@@ -1,5 +1,31 @@
 body {
-  background: #efefef;
+  background-color: #efefef;
   color: #020202;
   font-family: arial, "sans-serif";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+#main {
+  margin: 20px;
+}
+
+nav {
+  background: #020202;
+  padding: 20px;  
+  color: #efefef;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #efefef;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  background-color: #efefef;
+  color: #020202; 
+}
+
