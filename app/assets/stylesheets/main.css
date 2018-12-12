@@ -1,3 +1,4 @@
+/*Global Styles*/
 body {
   background-color: #efefef;
   color: #020202;
@@ -16,13 +17,20 @@ body {
   padding-top: 62px;
 }
 
+
+/*Nav bar*/
 nav {
-  background: #020202;
-  padding: 20px;  
+  background: #020202; 
   color: #efefef;
   position: fixed;
   top: 0;
   width: 100%;
+  height: 62px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /*align-items: stretch;*/
+  text-align: center;
 }
 
 .nav-link {
@@ -31,6 +39,9 @@ nav {
   padding: 20px;
   font-size: 1.2rem;
   font-weight: 700;
+  border-right: 1pt solid #efefef;
+  display: inline-block;
+  width: 100%;
 }
 
 .nav-link:hover {
@@ -159,4 +170,35 @@ input[type=submit]:focus {
   line-height: 20px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+/*Main page blog post styling*/
+#post-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.main-page-post {
+  width: 30%;
+  border-radius: 5px;
+  padding: 1%;
+  box-shadow: 0 0 5px #020202;
+}
+
+.main-page-post:hover {
+  box-shadow: 0 0 10px #020202;
+}
+
+
+@media only screen and (max-width: 767px) {
+  #post-wrapper {
+    flex-direction: column;
+  }
+
+  .main-page-post {
+    width: 100%;
+
+  }
 }
