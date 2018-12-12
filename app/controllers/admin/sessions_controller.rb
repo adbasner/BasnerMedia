@@ -16,7 +16,7 @@ class Admin::SessionsController < ApplicationController
       )
       session[:jwt] = jwt
 
-      flash[:success] = "#{user.username} is logged in!"
+      flash[:success] = 'You have logged in!'
       redirect_to admin_dashboard_path
     else
       flash.now[:warning] = 'Wrong user name or password'
@@ -26,7 +26,7 @@ class Admin::SessionsController < ApplicationController
 
   def destroy
     session[:jwt] = nil
-    flash[:warning] = ['logged out']
+    flash[:warning] = 'You have logged out'
     redirect_to admin_login_path
   end
 
