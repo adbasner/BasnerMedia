@@ -28,6 +28,34 @@ body {
 
 /***********************************
 
+Anchors for nav links, 
+
+************************************/
+
+.anchor {
+  padding-top: 62px;
+  margin-bottom: -62px;
+}
+
+.anchor-last {
+  padding-top: 62px;
+  /*margin-bottom: 62px;*/
+}
+
+@media only screen and (max-width: 767px) {
+  .anchor {
+    padding-top: 168px;
+    margin-bottom: -168px;
+  }
+
+  .anchor-last {
+    padding-top: 168px;
+
+  }
+}
+
+/***********************************
+
 Nav Bars
 
 ************************************/
@@ -88,6 +116,7 @@ Header img
   margin-top: 62px;
   margin-bottom: -62px; 
 }
+
 #header-img {
   background-image: url('/assets/comp1.jpg');
   background-color: #eee;
@@ -106,6 +135,68 @@ Header img
   font-size: 3.0rem;
 }
 
+
+@media only screen and (max-width: 767px) {
+  #header {
+    margin-top: 168px;
+    margin-bottom: -168px; 
+  }
+
+  #header-img {
+    background-image: url('/assets/comp1.jpg');
+    background-color: #eee;
+    height: 400px;
+  }
+
+  #header-text {
+    color: #fff;
+    font-size: 3.0rem;
+  }
+}
+
+/***********************************
+
+About section, to come
+
+************************************/
+
+/***********************************
+
+Main page blog posts
+
+************************************/
+
+#post-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.main-page-post {
+  box-sizing: border-box;
+  width: 30%;
+  border-radius: 5px;
+  padding: 1%;
+  box-shadow: 0 0 5px #020202;
+}
+
+.main-page-post:hover {
+  box-shadow: 0 0 10px #020202;
+}
+
+
+@media only screen and (max-width: 767px) {
+  #post-wrapper {
+    flex-direction: column;
+  }
+
+  .main-page-post {
+    width: 100%;
+    margin-bottom: 20px;
+    min-height: 300px;
+  }
+}
 
 /***********************************
 
@@ -159,26 +250,11 @@ input[type=submit]:focus {
 
 
 
+/***********************************
 
+Back end alerts
 
-#about {
-  padding-top: 62px;
-  margin-bottom: -62px;
-}
-
-#contact {
-  padding-top: 62px;
-  margin-bottom: -62px; 
-}
-
-#posts {
-  padding-top: 62px;
-  margin-bottom: -62px; 
-}
-
-#footer {
-  padding-top: 62px;
-}
+************************************/
 
 .alert {
   padding: 20px;
@@ -219,32 +295,3 @@ input[type=submit]:focus {
   transition: 0.3s;
 }
 
-/*Main page blog post styling*/
-#post-wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
-}
-
-.main-page-post {
-  width: 30%;
-  border-radius: 5px;
-  padding: 1%;
-  box-shadow: 0 0 5px #020202;
-}
-
-.main-page-post:hover {
-  box-shadow: 0 0 10px #020202;
-}
-
-
-@media only screen and (max-width: 767px) {
-  #post-wrapper {
-    flex-direction: column;
-  }
-
-  .main-page-post {
-    width: 100%;
-  }
-}
