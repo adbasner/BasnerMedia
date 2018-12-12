@@ -5,11 +5,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <% if admin_user %>
+      <%= link_to 'DASHBOARD', admin_dashboard_path %> | 
+      <%= link_to "UPDATE PROFILE", "/admin/users/#{admin_user.id}/edit" %> | 
+      <%= link_to 'LOG OUT', admin_logout_path, method: :delete %>
+    <% else %>
+      <%= link_to 'LOG IN', admin_login_path %>
+    <% end %>
     <%= render 'admin/shared/flash' %>
     <%= yield %>
   </body>

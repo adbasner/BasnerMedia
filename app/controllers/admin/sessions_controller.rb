@@ -14,10 +14,6 @@ class Admin::SessionsController < ApplicationController
         Rails.application.credentials.fetch(:secret_key_base),
         'HS256'
       )
-      puts '***************************'
-      puts 'my jwt is:'
-      puts jwt
-      puts '***************************'
       session[:jwt] = jwt
 
       flash[:success] = "#{user.username} is logged in!"

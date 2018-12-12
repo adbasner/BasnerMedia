@@ -4,6 +4,7 @@ class Admin::UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   def show
+    @last = Post.last.id
     render 'show.html.erb'
   end
 

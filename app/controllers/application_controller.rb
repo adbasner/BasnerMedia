@@ -7,25 +7,15 @@ class ApplicationController < ActionController::Base
   def set_headers
     if session[:jwt]
       @jwt = session[:jwt]
-      response.headers['Authorization'] = "#{session[:jwt]}"
-      puts "*************************"
-      puts response.headers
-      puts "*************************"
+      response.headers['Authorization'] = "Bearer #{session[:jwt]}"
     else
       response.headers.delete('Authorization')
-      puts "*************************"
-      puts "deleted auth headers"
-      puts response.headers
-      puts "*************************"
     end
   end
 
   def admin_user
     if response.headers['Authorization'].present?
-      puts "*************************"
-      puts "In auth if statement"
-      puts "*************************"
-      token = response.headers['Authorization']
+      token = response.headers['Authorization'].split(' ').last
       begin
         decoded_token = JWT.decode(
           token,
@@ -33,9 +23,6 @@ class ApplicationController < ActionController::Base
           true,
           { algorithm: 'HS256' }
         )
-        puts "*************************"
-        puts decoded_token
-        puts "*************************"
         User.find_by(id: decoded_token[0]['user'])
       rescue JWT::ExpiredSignature
         nil

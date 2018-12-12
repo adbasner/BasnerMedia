@@ -1,13 +1,13 @@
 class Admin::PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :delete, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :delete, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     render 'index.html.erb'
   end
 
   def show
-    set_post
     render 'show.html.erb'
   end
 
@@ -18,7 +18,7 @@ class Admin::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = 3
+    @post.user_id = admin_user.id
     if @post.save
       flash[:success] = 'Post was successfully created'
       redirect_to admin_path(@post)
@@ -28,13 +28,10 @@ class Admin::PostsController < ApplicationController
   end
 
   def edit
-    set_post
     render 'edit.html.erb'
   end
 
   def update
-    set_post
-
     if @post.update(post_params)
       flash[:success] = 'Post was successfully updated'
       redirect_to admin_path(@post)
@@ -44,13 +41,10 @@ class Admin::PostsController < ApplicationController
   end
 
   def delete
-    set_post
     render 'delete.html.erb'
   end
 
   def destroy
-    set_post
-
     if @post.destroy
       flash[:warning] = 'Article was deleted'
       redirect_to admin_posts_path
@@ -70,5 +64,14 @@ class Admin::PostsController < ApplicationController
   # only allows certain params through
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+ 
+  # Makes sure current_user is same as post created
+  # Shouldn't be needed with only 1 user, but whatever
+  def require_same_user
+    if admin_user != @post.user
+      flash[:danger] = ['You can not edit these articles fool']
+      redirect_to admin_posts_path
+    end
   end
 end
