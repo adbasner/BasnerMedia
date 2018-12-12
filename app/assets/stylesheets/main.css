@@ -1,4 +1,9 @@
-/*Global Styles*/
+/***********************************
+
+Global Styles
+
+************************************/
+
 body {
   background-color: #efefef;
   color: #020202;
@@ -17,20 +22,27 @@ body {
   padding-top: 62px;
 }
 
+.center {
+  text-align: center;
+}
 
-/*Nav bar*/
+/***********************************
+
+Nav Bars
+
+************************************/
+
 nav {
   background: #020202; 
   color: #efefef;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 62px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  /*align-items: stretch;*/
   text-align: center;
+  /*visibility: hidden;*/
 }
 
 .nav-link {
@@ -48,6 +60,58 @@ nav {
   background-color: #efefef;
   color: #020202; 
 }
+
+.nav-link:focus {
+  background-color: #cdcdcd;
+}
+
+@media only screen and (max-width: 767px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    border: none;
+    display: block;
+    padding: 10px;
+  }
+}
+
+/***********************************
+
+Header img
+
+************************************/
+
+
+#header {
+  margin-top: 62px;
+  margin-bottom: -62px; 
+}
+#header-img {
+  background-image: url('/assets/comp1.jpg');
+  background-color: #eee;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+
+#header-text {
+  color: #fff;
+  font-size: 3.0rem;
+}
+
+
+/***********************************
+
+Forms
+
+************************************/
 
 form {
   text-align: center;
@@ -93,26 +157,9 @@ input[type=submit]:focus {
   outline: none;
 }
 
-#header {
-  margin-bottom: -62px; 
-}
-#header-img {
-  background-image: url('/assets/comp1.jpg');
-  background-color: #eee;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 600px;
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-}
 
-#header-text {
-  color: #fff;
-  font-size: 2.0rem;
-}
+
+
 
 #about {
   padding-top: 62px;
@@ -199,6 +246,5 @@ input[type=submit]:focus {
 
   .main-page-post {
     width: 100%;
-
   }
 }
