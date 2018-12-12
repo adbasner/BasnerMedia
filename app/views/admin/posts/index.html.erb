@@ -1,12 +1,6 @@
 <h1>Index Page</h1>
 <hr>
 <hr>
-
-<%= link_to 'New Article', admin_posts_new_path %>
-
-<hr>
-<hr>
-
 <% @posts.each do |post| %>
   <div><%= link_to post.title, admin_path(post) %></div>
   <div>Id: <%= post.id%></div>
