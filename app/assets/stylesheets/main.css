@@ -15,15 +15,36 @@ body {
 }
 
 .home-page-wrapper {
-  margin: 0 20px 0 20px;
+  margin: 20px 20px 0 20px;
 }
 
 .admin-wrapper {
-  padding-top: 62px;
+  margin: 62px 20px 20px 20px;
+  padding-top: 10px;
 }
 
 .center {
   text-align: center;
+}
+
+hr {
+  color: #3bde9a;
+  height: 0;
+  border: 0;
+  box-shadow: 0 0 10px 1px #3bde9a;
+  width: 100%;
+  margin-top: 162px;
+}
+
+@media only screen and (max-width: 767px) {
+  .admin-wrapper {
+    margin-top: 168px;
+  }
+
+  hr {
+    margin-top: 268px;
+    margin-bottom: -100px;
+  }
 }
 
 /***********************************
@@ -39,7 +60,6 @@ Anchors for nav links,
 
 .anchor-last {
   padding-top: 62px;
-  /*margin-bottom: 62px;*/
 }
 
 @media only screen and (max-width: 767px) {
@@ -50,7 +70,6 @@ Anchors for nav links,
 
   .anchor-last {
     padding-top: 168px;
-
   }
 }
 
@@ -70,7 +89,7 @@ nav {
   flex-wrap: nowrap;
   justify-content: space-between;
   text-align: center;
-  /*visibility: hidden;*/
+  z-index: 99;
 }
 
 .nav-link {
@@ -82,6 +101,10 @@ nav {
   border-right: 1pt solid #efefef;
   display: inline-block;
   width: 100%;
+}
+
+.nav-link:last-of-type {
+  border-right: none;
 }
 
 .nav-link:hover {
@@ -171,18 +194,67 @@ Main page blog posts
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: stretch;
+  margin-bottom: 30px;
 }
 
 .main-page-post {
   box-sizing: border-box;
-  width: 30%;
+  width: 32%;
   border-radius: 5px;
   padding: 1%;
+  padding-bottom: 60px;
   box-shadow: 0 0 5px #020202;
+  position: relative;
 }
 
+.main-page-post h2 {
+  margin: 10px 0 10px 0;
+}
+
+.small-post-button {
+  position: absolute;
+  left: 5%;
+  bottom: 10px;
+  min-width: 0px;
+  width: 90%;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #3bde9a;
+  box-shadow: 0 0 5px #10bc79;
+  border: 1px solid #3bde9a;
+}
+
+.post-content {
+  max-height: 400px;
+  overflow: hidden;
+}
 .main-page-post:hover {
   box-shadow: 0 0 10px #020202;
+}
+
+.btn-wrapper {
+  text-align: center;
+}
+
+.main-post-button {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  min-width: 360px;
+  max-width: 600px;
+  width: 80%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #3bde9a;
+  box-shadow: 0 0 5px #10bc79;
+}
+
+input:focus, textarea:focus {
+  outline: 1px solid #00ab68;
 }
 
 
@@ -197,6 +269,8 @@ Main page blog posts
     min-height: 300px;
   }
 }
+
+
 
 /***********************************
 
@@ -214,7 +288,6 @@ form {
 input, textarea {
   padding: 8px;
   font-size: 1rem;
-  border: none;
   border-radius: 5px;
   box-shadow: 0 0 5px #555;
   min-width: 360px;
@@ -232,13 +305,20 @@ input:focus, textarea:focus {
 
 .btn {
   text-transform: uppercase;
-  margin: 10px auto;
+  font-weight: 700;
 }
 
 .btn-primary {
-  color: #eee;
+  color: #fff;
   background-color: #3bde9a;
   box-shadow: 0 0 5px #10bc79;
+}
+
+.btn:focus {
+  background-color: #10bc79;
+  box-shadow: 0 0 10px #10bc79;
+  border: 1px solid #10bc79;
+  outline: none;
 }
 
 input[type=submit]:focus {
@@ -248,7 +328,23 @@ input[type=submit]:focus {
   outline: none;
 }
 
+/***********************************
 
+footer
+
+************************************/
+
+#footer {
+  background-color: #3bde9a;
+  color: white;
+  margin-top: 100px;
+}
+#footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; 
+}
 
 /***********************************
 

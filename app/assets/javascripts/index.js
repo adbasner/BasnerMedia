@@ -1,3 +1,7 @@
+function isOverflown(element) {
+  return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}
+
 // Locates divs on index.html where blog posts will go.  Called in addBlogPosts()
 function getLocations() {
   let p1 = document.querySelector('#postOne');
@@ -27,7 +31,8 @@ function addBlogPosts(posts) {
   for (let post of posts) {
     locations[i].innerHTML = 
     '<h2>' + post.title + '</h2>' + 
-    '<p>' + post.content + '</p>'
+    '<div class="post-content">' + post.content + '</div>' +
+    '<a href="#"><button class="btn small-post-button">Read post</button></a>'
     ;
     i++;
   }

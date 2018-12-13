@@ -1,11 +1,9 @@
 <h1>Index Page</h1>
-<hr>
-<hr>
+
 <% @posts.each do |post| %>
   <div><%= link_to post.title, admin_path(post) %></div>
   <div>Id: <%= post.id%></div>
-  <div>Content: <%= post.content %></div>
+  <div>Content: <%= post.content.html_safe %></div>
   <div>Created On: <%= post.created_at.strftime("%b %d, %Y") %></div>
   <div>Updated On: <%= post.created_at.strftime("%b %d, %Y") %></div>
-  <hr>
 <% end %>
