@@ -1,7 +1,3 @@
-function isOverflown(element) {
-  return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-}
-
 // Locates divs on index.html where blog posts will go.  Called in addBlogPosts()
 function getLocations() {
   let p1 = document.querySelector('#postOne');
@@ -39,4 +35,4 @@ function addBlogPosts(posts) {
 }
 
 // Starts the whole process
-window.onload = postRequest();
+window.onload = postRequest(); 

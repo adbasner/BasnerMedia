@@ -299,9 +299,9 @@ input, textarea {
   box-shadow: 0 0 5px #10bc79;
 }
 
-input:focus, textarea:focus {
-  outline: 1px solid #00ab68;
-}
+  input:focus, textarea:focus {
+    outline: 1px solid #00ab68;
+  }
 
 .btn {
   text-transform: uppercase;

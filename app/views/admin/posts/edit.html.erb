@@ -15,7 +15,7 @@
     <%= form.label :content %>
   </div>
   <div>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, :id => 'editor' %>
   </div>
 
   <div>
@@ -24,3 +24,8 @@
 <% end %>
 
 <%= link_to 'Go Back', admin_path(@post) %>
+ <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor' );
+            </script>
