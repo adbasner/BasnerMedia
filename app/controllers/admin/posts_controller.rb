@@ -63,7 +63,7 @@ class Admin::PostsController < ApplicationController
 
   # only allows certain params through
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, category_ids: [])
   end
  
   # Makes sure current_user is same as post created
