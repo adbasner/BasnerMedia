@@ -19,13 +19,19 @@
   </div>
 
   <div>
+    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+      <% cb.label { cb.check_box } + cb.text %> 
+    <% end %>
+  </div>
+
+  <div>
     <%= form.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>
 
 <%= link_to 'Go Back', admin_path(@post) %>
- <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor' );
-            </script>
+<script>
+  // Replace the <textarea id="editor1"> with a CKEditor
+  // instance, using default configuration.
+  CKEDITOR.replace( 'editor' );
+</script>

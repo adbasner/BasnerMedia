@@ -65,7 +65,7 @@ class Admin::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content, category_ids: [])
   end
- 
+
   # Makes sure current_user is same as post created
   # Shouldn't be needed with only 1 user, but whatever
   def require_same_user

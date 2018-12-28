@@ -3,6 +3,15 @@
 <div>Id: <%= @post.id%></div>
 <div>Title: <%= @post.title %></div>
 <div>Content: <%= @post.content.html_safe %></div>
+
+<% if @post.categories.any? %>
+  <p>Categories: <% @post.categories.each do |category| %>
+    <span><%= category.name %></span>
+    <% end %>
+  </p>  
+<% end %>
+
+
 <div>Created On <%= @post.created_at.strftime("%b %d, %Y") %></div>
 <div>Updated On <%= @post.created_at.strftime("%b %d, %Y") %></div>
 
