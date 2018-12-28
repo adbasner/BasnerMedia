@@ -1,4 +1,6 @@
 class Api::CategoriesController < ApplicationController
+  before_action :require_admin, except: [:index, :show]
+
   def index
     @categories = Category.all
   end
@@ -23,5 +25,12 @@ class Api::CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit(:name)
+  end
+
+  def require_admin
+    if !admin_user
+      flash[:danger] = 'Only admins can do that'
+      redirect_to api_categories_path
+    end
   end
 end
